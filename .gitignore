@@ -1,0 +1,33 @@
+# Build
+build/
+sdkconfig
+sdkconfig.old
+sdkconfig.defaults
+*.bin
+*.elf
+*.map
+*.hex
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Python (ESP-IDF uses Python scripts)
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+env/
+venv/
+.venv/
+
+# Managed components (idf_component.yml)
+managed_components/
+
+# Dependencies (if using idf.py add-dependency)
+dependencies.lock
