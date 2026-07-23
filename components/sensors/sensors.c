@@ -67,12 +67,6 @@ void sensor_task(void *arg)
     EventBits_t bits;
     motor_cmd_t cmd;
 
-    cmd.left_speed   = 0;
-    cmd.right_speed  = 0;
-    cmd.left_dir     = MOTOR_STOP;
-    cmd.right_dir    = MOTOR_STOP;
-    cmd.sweeper_on   = false;
-
     ESP_LOGI(TAG, "Sensor task started (priority %d)", SENSOR_TASK_PRIORITY);
 
     while (1) {
@@ -93,6 +87,7 @@ void sensor_task(void *arg)
         }
 
         ESP_LOGW(TAG, "Emergency STOP - cliff detected!");
+        cmd = MOTOR_CMD_STOP;
         xQueueSend(motor_cmd_queue, &cmd, portMAX_DELAY);
     }
 }
