@@ -64,7 +64,7 @@ void motor_task(void *arg)
 {
     motor_cmd_t cmd;
 
-    ESP_LOGI(TAG, "Motor task started");
+    ESP_LOGI(TAG, "Motor task started → FORWARD");
     motor_set_forward();
 
     while (1) {
